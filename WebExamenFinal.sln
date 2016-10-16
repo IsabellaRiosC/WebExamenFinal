@@ -5,6 +5,10 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebExamenFinal", "WebExamenFinal\WebExamenFinal.csproj", "{16E2211D-F26E-4717-A9B9-3FD2ADB41573}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebExamenFinal.Model", "WebExamenFinal.Model\WebExamenFinal.Model.csproj", "{658EDFC2-F4C7-4FA6-9319-43C249355E83}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebExamenFinal.Repository", "WebExamenFinal.Repository\WebExamenFinal.Repository.csproj", "{036FB700-41A4-4D26-8231-1DA6F91805BC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{16E2211D-F26E-4717-A9B9-3FD2ADB41573}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{16E2211D-F26E-4717-A9B9-3FD2ADB41573}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{16E2211D-F26E-4717-A9B9-3FD2ADB41573}.Release|Any CPU.Build.0 = Release|Any CPU
+		{658EDFC2-F4C7-4FA6-9319-43C249355E83}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{658EDFC2-F4C7-4FA6-9319-43C249355E83}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{658EDFC2-F4C7-4FA6-9319-43C249355E83}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{658EDFC2-F4C7-4FA6-9319-43C249355E83}.Release|Any CPU.Build.0 = Release|Any CPU
+		{036FB700-41A4-4D26-8231-1DA6F91805BC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{036FB700-41A4-4D26-8231-1DA6F91805BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{036FB700-41A4-4D26-8231-1DA6F91805BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{036FB700-41A4-4D26-8231-1DA6F91805BC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
