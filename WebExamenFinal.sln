@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebExamenFinal.Model", "Web
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebExamenFinal.Repository", "WebExamenFinal.Repository\WebExamenFinal.Repository.csproj", "{036FB700-41A4-4D26-8231-1DA6F91805BC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebExamenFinal.Test", "WebExamenFinal.Test\WebExamenFinal.Test.csproj", "{DC7FE19A-7AF6-4206-9489-DF65513FBBAD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{036FB700-41A4-4D26-8231-1DA6F91805BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{036FB700-41A4-4D26-8231-1DA6F91805BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{036FB700-41A4-4D26-8231-1DA6F91805BC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DC7FE19A-7AF6-4206-9489-DF65513FBBAD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DC7FE19A-7AF6-4206-9489-DF65513FBBAD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DC7FE19A-7AF6-4206-9489-DF65513FBBAD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DC7FE19A-7AF6-4206-9489-DF65513FBBAD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

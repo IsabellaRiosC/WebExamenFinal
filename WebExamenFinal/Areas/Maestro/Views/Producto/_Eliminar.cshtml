@@ -1,0 +1,71 @@
+﻿@model WebExamenFinal.Model.Product
+
+@{
+    ViewBag.Title = "Eliminar";
+}
+
+
+<h3>Seguro de eliminar el registro?</h3>
+<div>
+    <h4>Producto</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ProductName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ProductName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SupplierId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SupplierId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UnitPrice)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UnitPrice)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Package)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Package)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IsDiscontinued)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IsDiscontinued)
+        </dd>
+
+    </dl>
+
+   @using (Ajax.BeginForm("Eliminar", new { Controller = "Producto", Area = "Maestro" },
+                                                     new AjaxOptions
+                                                     {
+                                                         HttpMethod = "Post",
+                                                         InsertionMode = InsertionMode.Replace,
+                                                         UpdateTargetId = "modal-body",
+                                                         OnSuccess = "refrescar('delete')"
+                                                     }))
+   {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Eliminar" class="btn btn-default" />
+            <button type="button" class="btn btn-info" data-dismiss="modal">Cerrar</button>
+        </div>
+    }
+</div>

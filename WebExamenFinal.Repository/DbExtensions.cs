@@ -12,11 +12,10 @@ namespace WebExamenFinal.Repository
         public static IEnumerable<TSource> Page<TSource>(
             this IEnumerable<TSource> source,
             int page,
-            int size
-            )
+            int size)
         {
-
             return source.Skip((page - 1) * size).Take(size);
         }
+
     }
 }

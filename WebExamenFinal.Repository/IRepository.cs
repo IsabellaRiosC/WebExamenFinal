@@ -7,23 +7,17 @@ using System.Threading.Tasks;
 
 namespace WebExamenFinal.Repository
 {
+
     public interface IRepository<T>
     {
-        int Add(T entity);
-        int Update(T entity);
+        int Agregar(T entity);
+        int Actualizar(T entity);
+        int Eliminar(T entity);
+        List<T> ObtenerLista();
+        T ObtenerPorCodigo(Expression<Func<T, bool>> match);
+        IEnumerable<T> ListaPaginada(Expression<Func<T, int>> match,int page, int size);
+        //IEnumerable<T> ListById(Expression<Func<T, bool>> match);
+        //IEnumerable<T> OrderedListByDateAndSize(Expression<Func<T, DateTime>> match, int size);
 
-        int Delete(T entity);
-
-        List<T> GetList();
-
-        T GetById(Expression<Func<T,bool>> match);
-
-        IEnumerable<T> ListById(Expression<Func<T, bool>> match);
-        IEnumerable<T> OrderedListByDateAndSize(Expression<Func<T, DateTime>> match, int size);
-        IEnumerable<T> PaginatedList(Expression<Func<T, DateTime>> match, int page,int size);
-
-        
     }
-
-
 }

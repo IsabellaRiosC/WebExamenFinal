@@ -4,23 +4,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.Entity;
-using WebExamenFinal.Model;
 using System.Data.Entity.ModelConfiguration.Conventions;
-
-
+using WebExamenFinal.Model;
 
 namespace WebExamenFinal.Repository
 {
-     public class WebContextDb : DbContext
-
+    public class WebContextDb : DbContext
     {
         public WebContextDb() : base("WebExamenFinalConnectionString")
         {
             Database.SetInitializer<WebContextDb>(null);
             Configuration.LazyLoadingEnabled = false;
             Configuration.ProxyCreationEnabled = false;
-
-
         }
         public virtual DbSet<Customer> Customer { get; set; }
         public virtual DbSet<Order> Order { get; set; }

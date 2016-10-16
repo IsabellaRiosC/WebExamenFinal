@@ -1,0 +1,72 @@
+﻿@model WebExamenFinal.Model.Customer
+
+@{
+    ViewBag.Title = "Eliminar";
+}
+
+<h3>Seguro de eliminar el registro?</h3>
+<div>
+    <h4>Cliente</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.FirstName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FirstName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LastName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LastName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.City)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.City)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Country)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Country)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Phone)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Phone)
+        </dd>
+
+    </dl>
+
+@using (Ajax.BeginForm("Eliminar", new { Controller = "Cliente", Area = "Maestro" },
+                                                                 new AjaxOptions
+                                                                 {
+                                                                     HttpMethod = "Post",
+                                                                     InsertionMode = InsertionMode.Replace,
+                                                                     UpdateTargetId = "modal-body",
+                                                                     OnSuccess = "refrescar('delete')"
+                                                                 }))
+{
+        @Html.AntiForgeryToken()
+
+    @Html.HiddenFor(model => model.Id)
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Eliminar" class="btn btn-default" />
+            <button type="button" class="btn btn-info" data-dismiss="modal">Cerrar</button>
+        </div>
+    }
+</div>

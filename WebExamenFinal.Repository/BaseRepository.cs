@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
-using System.Data.Entity;
-using System.Linq.Expressions;
 
 namespace WebExamenFinal.Repository
 {
@@ -22,65 +22,46 @@ namespace WebExamenFinal.Repository
             db = webcontext;
         }
 
-        public int Add(T entity)
+        public int Agregar(T entity)
         {
-
-           
             db.Set<T>().Add(entity);
-                return db.SaveChanges();
-            
-                
+            return db.SaveChanges();
         }
 
-        public int Delete(T entity)
+        public int Eliminar(T entity)
         {
-           
-                db.Entry(entity).State = EntityState.Deleted;
 
-                return db.SaveChanges();
-            
+            db.Entry(entity).State = EntityState.Deleted;
+            return db.SaveChanges();
+
         }
 
-        public T GetById(Expression<Func<T, bool>> match)
+        public T ObtenerPorCodigo(Expression<Func<T, bool>> match)
         {
-          
-                
-                return db.Set<T>().FirstOrDefault(match);
-           
+             return db.Set<T>().FirstOrDefault(match);
+
         }
 
-        public List<T> GetList()
+        public List<T> ObtenerLista()
         {
-            
             return db.Set<T>().ToList();
 
-            
         }
 
-        public IEnumerable<T> OrderedListByDateAndSize(Expression<Func<T, DateTime>> match, int size)
+    
+        public IEnumerable<T> ListaPaginada(Expression<Func<T, int>> match, int page, int size)
         {
-            return db.Set<T>().OrderByDescending(match).Take(size);
+            return db.Set<T>().OrderByDescending(match).Page(page, size);
         }
 
-        public IEnumerable<T> PaginatedList(Expression<Func<T, DateTime>> match, int page, int size)
+        public int Actualizar(T entity)
         {
-            return db.Set<T>().OrderByDescending(match).Page(page,size);
-        }
-
-        public int Update(T entity)        {
-
-             db.Entry(entity).State = EntityState.Modified;
-
+            db.Entry(entity).State = EntityState.Modified;
             return db.SaveChanges();
-            
-        }
-
-
-        public IEnumerable<T> ListById(Expression<Func<T, bool>> match)
-        {
-            return db.Set<T>().Where(match);
 
         }
+
+
 
     }
 }
